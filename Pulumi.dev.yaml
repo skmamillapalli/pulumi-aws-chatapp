@@ -1,0 +1,18 @@
+config:
+  aws:region: ap-southeast-1
+  chatapp_pulumi_iac:rds_confi:
+    rds_username: admin
+  chatapp_pulumi_iac:rds_config:
+    database_name: chatapp
+    password:
+      secure: AAABAHwB/3LvYGsP8jkEgUkfTtFa6IkeoFBR6oX3B3HTTUsmlWOL+RQ6
+    rds_password:
+      secure: AAABAPwPs30ksmTvK0EWaYy2A2k215LfbkWEitICN48gS7uYjku7pt2K
+    username: admin
+  chatapp_pulumi_iac:stage_config:
+    stage: dev
+  chatapp_pulumi_iac:vpc_config:
+    cidr: 172.3.0.0/16
+    private_subnet_1_cidr: 172.3.10.0/24
+    private_subnet_2_cidr: 172.3.11.0/24
+    public_subnet_cidr: 172.3.9.0/24

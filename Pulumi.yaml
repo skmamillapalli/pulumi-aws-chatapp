@@ -1,0 +1,6 @@
+name: chatapp_pulumi_iac
+runtime:
+  name: python
+  options:
+    virtualenv: venv
+description: A Simple Chat Application
