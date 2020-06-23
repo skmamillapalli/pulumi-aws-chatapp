@@ -2,8 +2,8 @@
 A serverless chat app deployed on aws with pulumi
 
 # How to run
-1. ## Install pulumi
-    Follow instructions [here](https://www.pulumi.com/docs/get-started/install/).
+1. ## Install pulumi and setup aws config
+    Follow instructions [here](https://www.pulumi.com/docs/get-started/install/)
 
 2. ## Set up project
    ```
