@@ -2,6 +2,7 @@
 A serverless chat app deployed on aws with pulumi
 
 # How to run
+*venv is only to faciliate easy setup with below steps. It avoids setting up new pulumi project and integration with changes in this repo. Without venv, please setup pulumi project and update files with changes in this repository*
 1. ## Install pulumi and setup aws config
     Follow instructions [here](https://www.pulumi.com/docs/get-started/install/)
 
@@ -26,6 +27,9 @@ A serverless chat app deployed on aws with pulumi
    ```
     pulumi up
    ```
+   
+   *or if you are doing a standalone installation, run*
+   ```pulumi new aws-python``` *then setup config as in #3, copy changes in this repo to your project followed by* ```pulumi up```
 # Using App
 ### Use the websocket url(from pulumi Outputs) to connect to API(use a client like wscat)
    ```
@@ -41,5 +45,4 @@ A serverless chat app deployed on aws with pulumi
    
     
     
-*venv is only to faciliate easy setup. Avoids setting up new pulumi project and integration with these changes.*
     
