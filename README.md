@@ -36,6 +36,8 @@ A serverless chat app deployed on aws with pulumi
    {"action":"send", "to":"Sid", "message":"Hey!!"}
    "Hey!!"
    ```
+## Errors
+   If you run into 4xx, please watch out for header string "username:Sid". 
    
     
     
