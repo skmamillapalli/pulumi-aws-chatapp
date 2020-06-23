@@ -2,13 +2,16 @@
 A serverless chat app deployed on aws with pulumi
 
 # How to run
-1. ## Set up project
+1. ## Install pulumi
+    Follow instructions [here](https://www.pulumi.com/docs/get-started/install/).
+
+2. ## Set up project
    ```
     git clone https://github.com/skmamillapalli/pulumi-aws-chatapp.git
     cd pulumi-aws-chatapp
    ```
     
-2. ## Setup config details
+3. ## Setup config details
    ```
     pulumi config set --path vpc_config.cidr 172.3.0.0/16
     pulumi config set --path vpc_config.pub_subnet_cidr 172.3.9.0/24
@@ -19,7 +22,7 @@ A serverless chat app deployed on aws with pulumi
     pulumi config set --path rds_config.database_name chatapp
     pulumi config set --path stage_config.stage dev
    ```
-3. ## Deploy stack
+4. ## Deploy stack
    ```
     pulumi up
    ```
