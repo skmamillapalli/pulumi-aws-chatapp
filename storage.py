@@ -13,10 +13,11 @@ def create_storage_nodes(subnets, security_groups):
     # To-do: Auth and encryption support
 
     # Create a redis cluster
+    # To-do: Handle encryption. Don't see any way from pulumi specs
     redis_cluster = elasticache.Cluster("redisnode",
         engine="redis",
         engine_version="3.2.10",
-        node_type="cache.t2.micro",
+        node_type="cache.t3.micro",
         num_cache_nodes=1,
         parameter_group_name="default.redis3.2",
         port=6379,
@@ -36,7 +37,7 @@ def create_storage_nodes(subnets, security_groups):
         allocated_storage=20,
         engine="mysql",
         engine_version="5.7",
-        instance_class="db.t2.micro",
+        instance_class="db.t3.micro",
         name=rds_database_name,
         parameter_group_name="default.mysql5.7",
         password=rds_password,
