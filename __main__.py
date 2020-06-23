@@ -1,8 +1,8 @@
-import network
-import storage
-import iam
-import lambdas
-import socketapi
+import infra.network as network
+import infra.storage as storage
+import infra.iam as iam
+import infra.lambdas as lambdas
+import infra.socketapi as socketapi
 import os, sys
 from pulumi import Config
 from pulumi import export
