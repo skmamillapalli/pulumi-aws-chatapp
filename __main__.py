@@ -31,15 +31,12 @@ lambda_functions = lambdas.create_functions(appcode_path=appcode_path,
         redis_cluster=storage_nodes['redis'],
         rds_instance=storage_nodes['rds'],
         web_socket_api=socket_api['api'])
-socketapi.create_route_integrations(
+deployment = socketapi.create_route_integrations(
     web_socket_api=socket_api['api'],
     functions=lambda_functions,
     region=region,
     description=socket_api['description']
 )
-
-# Create deployment
-deployment=socketapi.create_deployment(web_socket_api=socket_api['api'])
 
 # Finally create a Stage
 stage = socketapi.create_stage(

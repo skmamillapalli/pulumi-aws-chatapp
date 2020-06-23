@@ -1,5 +1,6 @@
 from pulumi_aws import apigatewayv2
 import random, string, sys, os
+from pulumi import ResourceOptions
 
 def create_websocket_api():
     api_description = "APIs for a simple chat application"+"-"+''.join(random.sample(string.ascii_lowercase, 10))
@@ -95,8 +96,9 @@ def create_route_integrations(region=None, web_socket_api=None, functions=None, 
         route_key="send",
         target=send_message_integration_id)
 
-def create_deployment(web_socket_api=None):
-    deployment=apigatewayv2.Deployment("example",
+    deployment=apigatewayv2.Deployment("deployment",
+        opts=ResourceOptions(
+        depends_on=[connect_route, disconnect_route, send_message_route]),
         api_id=web_socket_api.id,
         description="ChatApp API deployment")
     return deployment
