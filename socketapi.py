@@ -61,7 +61,7 @@ def create_route_integrations(region=None, web_socket_api=None, functions=None, 
     # Create routes
     # -------------
     # Hacky way to get around connect/disconnect updates
-    # pulumi won't let update routes created by default this is stopping from adding a backend integrations
+    # pulumi won't let update routes created by default and this is stopping from adding a backend integrations
     # This fix will be removed once a way is figured out
     sys.path.insert(0, os.path.join(os.path.curdir, 'packages'))
     import boto3

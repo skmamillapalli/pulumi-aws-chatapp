@@ -23,4 +23,6 @@ A serverless chat app deployed on aws with pulumi
    ```
     pulumi up
    ```
+
+*venv is only to faciliate easy setup. Avoids setting up new pulumi project and integration with these changes.*
     
