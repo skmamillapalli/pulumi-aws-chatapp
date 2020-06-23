@@ -26,6 +26,18 @@ A serverless chat app deployed on aws with pulumi
    ```
     pulumi up
    ```
-
+# Using App
+### Use the websocket url(from pulumi Outputs) to connect to API(use a client like wscat)
+   ```
+   wscat -c wss://randomid9.execute-api.ap-southeast-1.amazonaws.com/Dev -H "username:Sid"
+   ````
+### Once connection is established, messages can be sent/received over connection
+   ```
+   {"action":"send", "to":"Sid", "message":"Hey!!"}
+   "Hey!!"
+   ```
+   
+    
+    
 *venv is only to faciliate easy setup. Avoids setting up new pulumi project and integration with these changes.*
     
