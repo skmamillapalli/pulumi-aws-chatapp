@@ -30,6 +30,8 @@ A serverless chat app deployed on aws with pulumi
    
    *or if you are doing a standalone installation, run*
    ```pulumi new aws-python``` *then setup config as in #3, copy changes in this repo to your project followed by* ```pulumi up```
+     ![alt text](https://github.com/skmamillapalli/pulumi-aws-chatapp/blob/master/docs/deployment.jpg?raw=true)
+  
 # Using App
 ### Use the websocket url(from pulumi Outputs) to connect to API(use a client like wscat)
    ```
@@ -40,9 +42,9 @@ A serverless chat app deployed on aws with pulumi
    {"action":"send", "to":"Sid", "message":"Hey!!"}
    "Hey!!"
    ```
+  ![alt text](https://github.com/skmamillapalli/pulumi-aws-chatapp/blob/master/images/connect.jpg?raw=true)
 ## Errors
    If you run into 4xx, please watch out for header string "username:Sid". 
    
-    
     
     
