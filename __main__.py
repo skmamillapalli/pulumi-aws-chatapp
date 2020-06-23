@@ -37,10 +37,15 @@ socketapi.create_route_integrations(
     region=region,
     description=socket_api['description']
 )
+
+# Create deployment
+deployment=socketapi.create_deployment(web_socket_api=socket_api['api'])
+
 # Finally create a Stage
 stage = socketapi.create_stage(
     stage=stage_config['stage'],
-    web_socket_api=socket_api['api'])
+    web_socket_api=socket_api['api'],
+    deployment=deployment)
 
 # and export outputs
 export("invoke_url", stage.invoke_url.apply(lambda url:url+'/'))

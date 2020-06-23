@@ -95,8 +95,15 @@ def create_route_integrations(region=None, web_socket_api=None, functions=None, 
         route_key="send",
         target=send_message_integration_id)
 
-def create_stage(stage=None, web_socket_api=None):
+def create_deployment(web_socket_api=None):
+    deployment=apigatewayv2.Deployment("example",
+        api_id=web_socket_api.id,
+        description="ChatApp API deployment")
+    return deployment
+
+def create_stage(stage=None, web_socket_api=None, deployment=None):
     stage = apigatewayv2.Stage("Devstage",
         api_id=web_socket_api.id,
-        name=stage)
+        name=stage,
+        deployment_id=deployment.id)
     return stage
